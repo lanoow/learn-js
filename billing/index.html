@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bill Calculator - Learn JS</title>
+
+	<script src="//cdn.tailwindcss.com"></script>
+	
+	<style>
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+  			-webkit-appearance: none;
+  			margin: 0;
+		}
+
+		input[type=number] {
+  			-moz-appearance: textfield;
+		}
+	</style>
+</head>
+<body class="bg-gray-700">
+	<div class="
+		w-96 py-8 mx-auto my-8
+		flex flex-col items-center text-center
+		bg-gray-800 shadow-xl rounded-xl
+		transition-all duration-200 ease-in-out
+	">
+		<div class="flex-col items-center space-y-4 px-4">
+			<h1 class="text-xl font-bold text-white mb-8">
+				💸 Bill Calculator
+			</h1>
+
+			<input
+			type="number" name="bill" id="bill"
+			placeholder="Bill ($)" class="
+				text-lg text-white py-2 px-4 w-full
+				rounded-md outline-none bg-transparent
+				border-2 border-gray-600 focus:border-indigo-600
+				transition duration-200 ease-in-out
+			" onkeyup="calculateBill()">
+
+			<input
+			type="number" name="tip" id="tip"
+			placeholder="Tip (%)" class="
+				text-lg text-white py-2 px-4 w-full
+				rounded-md outline-none bg-transparent
+				border-2 border-gray-600 focus:border-indigo-600
+				transition duration-200 ease-in-out
+			" onkeyup="calculateBill()">
+
+			<div class="flex items-center justify-between text-white font-medium pb-8">
+				<div class="flex flex-col items-start">
+					<span class="text-lg">People</span>
+					
+					<div class="flex items-center space-x-2 select-none">
+						<button type="submit" id="addPeople" class="
+							text-lg text-white pb-1 px-3 rounded-full outline-none
+							bg-gray-600 hover:bg-indigo-600
+							transition duration-200 ease-in-out
+						" onclick="increasePeople()">&plus;</button>
+
+						<span class="text-2xl" id="people">1</span>
+						
+						<button type="submit" id="removePeople" class="
+							text-lg text-white pb-1 px-3 rounded-full outline-none 
+							bg-gray-600 hover:bg-indigo-600
+							transition duration-200 ease-in-out
+						" onclick="decreasePeople()">&minus;</button>
+					</div>
+				</div>
+
+				<div class="flex flex-col items-end">
+					
+					<span class="text-lg">Total per Person</span>
+					<span class="text-2xl" id="totalPerPerson">$0.00</span>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<a href="/"
+	   	class="
+		absolute bottom-4 left-4
+	    text-lg font-medium text-white
+	    py-2 px-4 rounded-md outline-none
+		bg-gray-800 hover:bg-indigo-600
+		border-2 border-gray-800 hover:border-indigo-600
+		transition duration-200 ease-in-out shadow-lg
+		">
+			Go Home 🏠
+	</a>
+
+	<script src="index.js"></script>
+</body>
+</html>
